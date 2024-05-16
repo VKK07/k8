@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql
+  name: mysql-deployment
+  labels:
+    app: mysql
 spec:
   replicas: 1
   selector:
@@ -14,12 +16,18 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: kirankumarv7/dynamic_wp
+        image: kirankumarv7/mysql 8.0
         ports:
         - containerPort: 3306
         env:
-        - name: MYSQL_ROOT_PASSWORD
-          value: pass
+        - name: MYSQL_RANDOM_ROOT_PASSWORD
+          value: sai123
+        - name: MYSQL_DATABASE
+          value: exampledb
+        - name: MYSQL_USER
+          value: exampleuser
+        - name: MYSQL_PASSWORD
+          value: examplepass  
 ---
 apiVersion: v1
 kind: Service
