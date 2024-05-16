@@ -16,18 +16,18 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: mysql:8.0
+        image: kirankumarv7/mysql:8.0.19
         ports:
         - containerPort: 3306
         env:
         - name: MYSQL_RANDOM_ROOT_PASSWORD
-          value: sai123
+          value: sai#123
         - name: MYSQL_DATABASE
-          value: exampledb
+          value: wordpress
         - name: MYSQL_USER
-          value: exampleuser
+          value: kiran
         - name: MYSQL_PASSWORD
-          value: examplepass  
+          value: admin123 
 ---
 apiVersion: v1
 kind: Service
