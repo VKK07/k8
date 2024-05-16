@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: kirankumarv7/mysql 8.0
+        image: kirankumarv7/mysql:8.0
         ports:
         - containerPort: 3306
         env:
